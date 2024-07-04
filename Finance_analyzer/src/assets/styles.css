@@ -1,0 +1,14 @@
+body {
+    background-image: url('/assets/pexels-catiamatos-1072179.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    color: white;    /* This sets the text color for the entire body */
+}
+
+html, body, #root, .app-container {
+    height: 100%;
+}
