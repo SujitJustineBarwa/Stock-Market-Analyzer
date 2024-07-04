@@ -27,7 +27,7 @@ layout = dbc.Container(
                 dbc.Col(
                     [
                         html.P("Select a stock data file:"),
-                        dcc.Dropdown(id="stock-selector", options=list_csv_files(), value=None, clearable=False),
+                        dcc.Dropdown(id="stock-selector", value=None, clearable=False),
                         html.Hr(),
 
                         html.P("Select the time period:"),
@@ -89,7 +89,8 @@ layout = dbc.Container(
         Output("histogram-graph", "figure"),
         Output("histogram-graph-of-returns", "figure"),
         Output("volume-histogram-graph", "figure"),
-        Output("stats-output", "children")
+        Output("stats-output", "children"),
+        Output("stock-selector","options")
     ],
     [
         Input("interval-component", "n_intervals"),
@@ -185,4 +186,4 @@ def update_graph(n_intervals, selected_csv, start_percent):
         ]
     )
 
-    return stock_fig, stock_return_fig, volume_fig, hist_fig, hist_return_fig, hist_volume_fig, stats_output
+    return stock_fig, stock_return_fig, volume_fig, hist_fig, hist_return_fig, hist_volume_fig, stats_output,list_csv_files()
