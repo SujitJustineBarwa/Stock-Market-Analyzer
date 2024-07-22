@@ -122,5 +122,15 @@ kite.modify_order(variety=kite.VARIETY_REGULAR,
 kite.cancel_order(variety=kite.VARIETY_REGULAR,
                   order_id="order_id",
                   parent_order_id=None)
+
+# Exit the position
+order_id = kite.exit_position(
+    tradingsymbol="IOC",
+    exchange=kite.EXCHANGE_NSE,
+    quantity=1,
+    order_type=kite.ORDER_TYPE_MARKET  # Or use kite.ORDER_TYPE_LIMIT with a specified price
+)
+
+print(f"Exit order placed with order ID: {order_id}")
                   
 ```
